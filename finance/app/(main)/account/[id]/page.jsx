@@ -2,14 +2,14 @@ import React from 'react'
 // import { get } from 'react-hook-form';
 import { notFound } from 'next/navigation';
 import { getAccountWithTransactions } from '@/actions/accounts';
-import TransactionTable from './components/transaction-table';
+import TransactionTable from '../components/transaction-table';
 import { Suspense } from 'react';
 import { BarLoader } from 'react-spinners';
-import {AccountChart} from './components/account-chart';
+import {AccountChart} from '../components/account-chart';
 
 
 
-const AccountsPage = async ({params}) => {
+export default async function AccountsPage({ params }) {
     
     const accountData = await getAccountWithTransactions(params.id);
     if(!accountData){
@@ -58,4 +58,4 @@ const AccountsPage = async ({params}) => {
 
 
 
-export default AccountsPage;
+

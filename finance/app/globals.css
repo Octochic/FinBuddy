@@ -166,3 +166,8 @@
 .hero-image.scrolled {
   transform: rotateX(0deg) scale(1) translateY(40px);
 }
+
+.animate-gradient{
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}

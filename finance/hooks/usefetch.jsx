@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import { toast } from "sonner";
 
 const useFetch =(cb)=>{
     const [data, setData]= useState(undefined);
@@ -27,3 +28,4 @@ const useFetch =(cb)=>{
     return {data, error, loading, fn, setData};
 }
 export default useFetch;
+

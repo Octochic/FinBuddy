@@ -322,8 +322,14 @@ const TransactionTable = ({ transaction = [] }) => {
                     <DropdownMenuContent>
                       <DropdownMenuLabel onClick={() => router.push(`/transaction/${transaction.id}`)}>My Account</DropdownMenuLabel>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem className="text-destructive" onClick={() => {
+                      <DropdownMenuItem
+                      onClick={() =>
+                            router.push(
+                              `/transaction/create?edit=${transaction.id}`
+                            )
+                          }>Edit</DropdownMenuItem>
+                      <DropdownMenuItem className="text-destructive" 
+                      onClick={() => {
                         if (window.confirm("Are you sure you want to delete this transaction?")) {
                         deleteFN([transaction.id]);
                         }
